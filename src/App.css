@@ -70,6 +70,11 @@ li{
     font-weight: 500;
 }
 
+.mapbox{
+    height: 100vh;
+    cursor: grab;
+}
+
 .btn:hover{
     background: var(--SecondaryColor);
 }
