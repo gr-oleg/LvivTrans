@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import './navbar.css'
-import { FaBusAlt, FaBus  } from 'react-icons/fa'
+import { FaBusAlt } from 'react-icons/fa'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { TbGridDots } from 'react-icons/tb'
 
@@ -30,19 +30,19 @@ const Navbar = () => {
                     <ul className="navLists flex">
 
                         <li className="navItem">
-                            <a href="#" className="navLink">Home</a>
+                            <a href="/home" className="navLink">Home</a>
                         </li>
 
                         <li className="navItem">
-                            <a href="#" className="navLink">About</a>
+                            <a href="/About" className="navLink">About</a>
                         </li>
 
                         <li className="navItem">
-                            <a href="#" className="navLink">Contact</a>
+                            <a href="/Contact" className="navLink">Contact</a>
                         </li>
 
                         <button className="btn">
-                            <a href="#">Login</a>
+                            <a href="/login">Login</a>
                         </button>
                         
                     </ul>

@@ -91,7 +91,7 @@ body{
 li{
     display: inline-block;
     position: relative;
-    color: #ffffff;
+    color: var(--whiteColor);
     font-family: sans-serif;
     font-size: 20px;
     cursor: pointer;
@@ -99,7 +99,7 @@ li{
 }
 
 li:hover{
-    color: #cdcdcd;
+    color: var(--whiteColorDeam);
     transition: 0.4 all ease;
 }
 
