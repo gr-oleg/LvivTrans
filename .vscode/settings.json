@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/6eb31451-3424-4343-a3b3-93b7661b8110/resourceGroups/LvivTrans/providers/Microsoft.Web/sites/lvivtrans",
+    "appService.deploySubpath": "."
+}
