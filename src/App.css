@@ -14,6 +14,8 @@
     --SecondaryColor: hsl(187, 85%, 43%);
     --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), 
     hsl(199, 100%, 33%));
+    --gradientSecondColor: linear-gradient(hsl(187, 68%, 67%), 
+    hsl(199, 43%, 54%));
     --whiteColor: hsl(0, 0%, 100%);
     --blackColor: hsl(201, 33%, 16%);
     --textColor: hsl(240, 4%, 36%);
@@ -120,3 +122,18 @@ li:hover::after{
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+::-webkit-scrollbar{
+    width: 6px;
+}
+
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px var(--greyText);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--gradientSecondColor);
+    border-radius: 10px;
+}
+

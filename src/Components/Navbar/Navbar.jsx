@@ -3,6 +3,7 @@ import './navbar.css'
 import { FaBusAlt } from 'react-icons/fa'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { TbGridDots } from 'react-icons/tb'
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [active, setActive] = useState('navBar')
@@ -30,19 +31,19 @@ const Navbar = () => {
                     <ul className="navLists flex">
 
                         <li className="navItem">
-                            <a href="/home" className="navLink">Home</a>
+                            <Link to="/home" className="navLink">Home</Link>
                         </li>
 
                         <li className="navItem">
-                            <a href="/About" className="navLink">About</a>
+                            <Link to="/about" className="navLink">About</Link>
                         </li>
 
                         <li className="navItem">
-                            <a href="/Contact" className="navLink">Contact</a>
+                            <Link to="/contact" className="navLink">Contact</Link>
                         </li>
 
                         <button className="btn">
-                            <a href="/login">Login</a>
+                            <Link to="/login">Login</Link>
                         </button>
                         
                     </ul>
