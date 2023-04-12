@@ -12,10 +12,10 @@ const About = () => {
 
     return (
         <section className='about'>
-            <div className="overlay"></div>
+            <div></div>
             <video src={video} muted autoPlay loop type="video/mp4"></video>
 
-            <div className="aboutContent container">
+            <div className="aboutContent">
                 <div className="textDiv">
 
                     <h1 data-aos="fade-up" className="aboutTitle">
