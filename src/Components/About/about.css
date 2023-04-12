@@ -49,26 +49,30 @@ video{
 }
 
 .cardDiv1{
-    width: 90%;
+    width: 60%;
     position: relative;
     padding: 1.8rem 1rem;
-    background: var(--whiteColorDeam);
+    background: #ffffff10;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 10px;
     gap: 1rem;
 }
 
 .cardDiv2{
     margin-left: auto;
-    width: 90%;
+    width: 60%;
     position: relative;
     padding: 1.8rem 1rem;
-    background: var(--whiteColorDeam);
+    background: #ffffff10;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 10px;
     gap: 1rem;   
 }
 
 span{
-    color: var(--blackColor);    
+    color: var(--whiteColorDeam);    
 }
 
 .aboutTitle{

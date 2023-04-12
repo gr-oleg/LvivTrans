@@ -19,7 +19,7 @@ const About = () => {
                 <div className="textDiv">
 
                     <h1 data-aos="fade-up" className="aboutTitle">
-                        About the LvivTrans project
+                       
                     </h1>
                 </div>
 
