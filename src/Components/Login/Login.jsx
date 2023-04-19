@@ -53,7 +53,7 @@ const Login = () => {
             <h2 className="form__title">Sign In</h2>
             <input type="email" placeholder="Email" className="input" />
             <input type="password" placeholder="Password" className="input" />
-            <a href="#" className="link">
+            <a href="#1" className="link">
               Forgot your password?
             </a>
             <button className="btnl">Sign In</button>
