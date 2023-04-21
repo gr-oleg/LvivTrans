@@ -1,0 +1,13 @@
+.closeMes{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--PrimaryColor);
+    &:hover{
+        color: var(--SecondaryColor);
+    }
+}
+
+.message{
+top: 7rem;
+}
