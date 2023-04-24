@@ -1,4 +1,3 @@
-@import url("https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css");
 
 /* Author: Daniel */
 :root {
@@ -7,6 +6,7 @@
   --gray: #333;
   --blue: #0367a6;
   --lightblue: #008997;
+  --insta: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 
   /* RADII */
   --button-radius: 0.7rem;
@@ -112,59 +112,91 @@
   margin: 0;
   position: absolute;
   top: 50%;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
   width: 0;
+  z-index: -1;
 }
 .icon-button:hover span {
   width: 3.6rem;
   height: 3.6rem;
   border-radius: 3.6rem;
   margin: -1.8rem;
+  z-index: -1;
 }
-.twitter span {
+.github span {
+  background-color: #171515;
+}
+.linkedin span {
+  background-color: #0e76a8;
+}
+.telegram span {
   background-color: #4099ff;
 }
 .facebook span {
   background-color: #3b5998;
 }
-.google-plus span {
+.italic span {
   background-color: #db5a3c;
 }
-/* Icons */
-.icon-button i {
-  background: none;
-  color: white;
-  height: 3.6rem;
-  left: 0;
-  line-height: 3.6rem;
-  position: absolute;
-  top: 0;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  width: 3.6rem;
-  z-index: 10;
+
+.icon-button .icon-linkedin {
+  color: #0e76a8;
 }
-.icon-button .icon-twitter {
+.icon-button .icon-github {
+  color: #171515;
+}
+.icon-button .icon-telegram {
   color: #4099ff;
 }
 .icon-button .icon-facebook {
   color: #3b5998;
 }
-.icon-button .icon-google-plus {
+.icon-button .icon-italic {
   color: #db5a3c;
 }
-.icon-button:hover .icon-twitter,
+
+.icon-button:hover .icon-linkedin,
+.icon-button:hover .icon-github,
+.icon-button:hover .icon-telegram,
 .icon-button:hover .icon-facebook,
-.icon-button:hover .icon-google-plus {
+.icon-button:hover .icon-italic {
   color: white;
+  z-index: 1;
 }
 
-  
+.icon-button a{
+  list-style: none;
+  margin: 0 10px;
+}
+.icon-button a{
+  color: #000000;
+  font-size: 25px;
+  line-height: 50px;
+  transition: .5s;
+}
+.icon-button a:hover {
+  color: #ffffff;
+}
+.icon-button{
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  transition: 0.5s;
+  transform: translate(0,0px);
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+}
+
+.icon-button:hover {
+  transform: rotate(0deg) skew(0deg) translate(0, -10px);
+}
+
   @keyframes fade {
     0% {
       opacity: 0;

@@ -3,6 +3,7 @@ import "./contact.css";
 import { contactConfig } from "./content_option";
 import emailjs from '@emailjs/browser';
 import image from '../../Assets/support.png';
+import { FaGithub, FaLinkedinIn, FaTelegramPlane, FaInstagram, FaFacebook } from 'react-icons/fa'
 
 
 const Contact = () => {
@@ -35,9 +36,11 @@ const Contact = () => {
                <strong>Phone:</strong> {contactConfig.YOUR_PHONE}
             </p>
             <br/>
-            <a href="#" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a>
-            <a href="#" class="icon-button facebook"><i class="icon-facebook"></i><span></span></a>
-            <a href="#" class="icon-button google-plus"><i class="icon-google-plus"></i><span></span></a>
+            <a href="https://www.linkedin.com/in/олег-герій-451a47251/" target="_blank" class="icon-button linkedin"><FaLinkedinIn class="icon-linkedin"/><span></span></a>
+            <a href="https://github.com/gr-oleg/LvivTrans.git" target="_blank" class="icon-button github"><FaGithub class="icon-github"/><span></span></a>
+            <a href="https://t.me/gr6_oleg" target="_blank" class="icon-button telegram"><FaTelegramPlane class="icon-telegram"/><span></span></a>
+            <a href="#" target="_blank" class="icon-button italic"><FaInstagram class="icon-italic"/><span></span></a>
+            <a href="https://www.facebook.com/profile.php?id=100015682263591" target="_blank" class="icon-button facebook"><FaFacebook class="icon-facebook"/><span></span></a>
          </address>
             
           </form>
