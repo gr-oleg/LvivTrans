@@ -1,3 +1,5 @@
+# About Project
+
 LvivTrans is a web application designed to help citizens and tourists navigate the public transportation system in Lviv, Ukraine. The app provides real-time GPS tracking of buses, trams, and trolleybuses, allowing users to track their location and estimated arrival times. If a suitable public transportation option is not available, users can also book a taxi through the app.
 
 The app features a user-friendly interface with a map displaying the current location of public transportation vehicles, as well as a search function to find specific routes or stops. Users can create an account to save their favorite routes and receive personalized updates on delays or changes in service.
