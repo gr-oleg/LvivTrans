@@ -1,3 +1,11 @@
+LvivTrans is a web application designed to help citizens and tourists navigate the public transportation system in Lviv, Ukraine. The app provides real-time GPS tracking of buses, trams, and trolleybuses, allowing users to track their location and estimated arrival times. If a suitable public transportation option is not available, users can also book a taxi through the app.
+
+The app features a user-friendly interface with a map displaying the current location of public transportation vehicles, as well as a search function to find specific routes or stops. Users can create an account to save their favorite routes and receive personalized updates on delays or changes in service.
+
+The app is built using React for the frontend and Java Spring for the backend, with a PostgreSQL database to store and manage data. It also integrates with the Mapbox API to provide accurate and up-to-date maps and location data.
+
+Overall, LvivTrans aims to improve the public transportation experience in Lviv by providing users with real-time information and convenient booking options.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
