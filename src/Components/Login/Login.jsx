@@ -1,7 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./login.css";
 
 const Login = () => {
+  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+
+  const handleClick=(e)=>{
+    e.preventDefault()
+    const login={user, email, pass}
+    console.log(login)
+    fetch("http://localhost:8080/user/add",{
+      method: "POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(login)
+    }).then(()=>{
+      console.log("New user added")
+    })
+  }
+
   useEffect(() => {
     const signInBtn = document.getElementById("signIn");
     const signUpBtn = document.getElementById("signUp");
@@ -41,10 +58,19 @@ const Login = () => {
         <div className="container__form container--signup">
           <form action="#" className="form" id="form1">
             <h2 className="form__title">Sign Up</h2>
-            <input type="text" placeholder="User" className="input" />
-            <input type="email" placeholder="Email" className="input" />
-            <input type="password" placeholder="Password" className="input" />
-            <button className="btnl">Sign Up</button>
+            <input type="text" placeholder="User" className="input" 
+            value={user}
+            onChange={(e)=>setUser(e.target.value)}
+            />
+            <input type="email" placeholder="Email" className="input" 
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
+            />
+            <input type="password" placeholder="Password" className="input" 
+            value={pass}
+            onChange={(e)=>setPass(e.target.value)}
+            />
+            <button className="btnl" onClick={handleClick}>Sign Up</button>
           </form>
         </div>
 

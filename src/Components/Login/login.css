@@ -21,7 +21,7 @@
 .login {
     align-items: center;
     background-color: var(--white);
-    background: url('../../Assets/pexels-alexander-zvir-5032390.jpg');
+    background: url('../../Assets/Depositphotos.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -103,7 +103,7 @@
 
 .overlay {
     background-color: var(--lightblue);
-    background: url('../../Assets/pexels-alexander-zvir-5032390.jpg');
+    background: url('../../Assets/63_main.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
