@@ -19,6 +19,37 @@ const Login = () => {
     })
   }
 
+  const loginClick = (e) => {
+    e.preventDefault();
+    const url = `http://localhost:8080/user/${email}?pass=${pass}`;
+    fetch(url, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Network response was not ok");
+        }
+      })
+      .then((data) => {
+        if (data && data.email) {
+          console.log("OK");
+          if (data.pass === pass) {
+            console.log("OK pass");
+          } else {
+            console.log("Incorrect password");
+          }
+        } else {
+          console.log("User not found");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+  
   useEffect(() => {
     const signInBtn = document.getElementById("signIn");
     const signUpBtn = document.getElementById("signUp");
@@ -77,12 +108,16 @@ const Login = () => {
         <div className="container__form container--signin">
           <form action="#" className="form" id="form2">
             <h2 className="form__title">Sign In</h2>
-            <input type="email" placeholder="Email" className="input" />
-            <input type="password" placeholder="Password" className="input" />
+            <input type="email" placeholder="Email" className="input"
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}/>
+            <input type="password" placeholder="Password" className="input" 
+            value={pass}
+            onChange={(e)=>setPass(e.target.value)}/>
             <a href="#1" className="link">
               Forgot your password?
             </a>
-            <button className="btnl">Sign In</button>
+            <button className="btnl" onClick={loginClick}>Sign In</button>
           </form>
         </div>
 
