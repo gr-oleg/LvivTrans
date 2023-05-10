@@ -31,10 +31,12 @@ const Contact = () => {
            <img src={image} className="support"/>
            <br/>
            <br/>
+           <div className="email_phone">
            <strong >Email:</strong> {contactConfig.YOUR_EMAIL}
             <p>
-               <strong>Phone:</strong> {contactConfig.YOUR_PHONE}
+               <strong >Phone:</strong> {contactConfig.YOUR_PHONE}
             </p>
+            </div>
             <br/>
             <a href="https://www.linkedin.com/in/олег-герій-451a47251/" target="_blank" class="icon-button linkedin"><FaLinkedinIn class="icon-linkedin"/><span></span></a>
             <a href="https://github.com/gr-oleg/LvivTrans.git" target="_blank" class="icon-button github"><FaGithub class="icon-github"/><span></span></a>
@@ -46,6 +48,7 @@ const Contact = () => {
           </form>
         </div>
         
+        <div className="sendEmail">
         <form ref={form} onSubmit={sendEmail}>
         <div className="container__overlay">
           <div className="text">
@@ -57,10 +60,12 @@ const Contact = () => {
             <textarea name="message" placeholder="Message" rows="4" className="input"></textarea>
             <button type="submit" className="btnl">Send</button>
             
+            
           </div>
           </div>
         </div>
         </form>
+        </div>
       </div>
 
     </body>
