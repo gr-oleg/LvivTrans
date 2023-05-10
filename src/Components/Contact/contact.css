@@ -205,3 +205,81 @@
       opacity: 1;
     }
   }
+
+@media screen and (max-width: 769px) {
+    .contact .form {
+        font-size: 2px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+        .contact .form .email_phone {
+            font-size: 0px;
+        }
+
+    .text {
+        background-color: var(--white);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 1rem;
+        height: 100%;
+    }
+
+    .contact .input {
+        background-color: #fff;
+        border: none;
+        padding: 0.9rem 0.9rem;
+        margin: 0.5rem 0;
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+    .contact .btnl {
+        margin: 0.5rem 0;
+        margin-left: -5px;
+    }
+
+    .support {
+        width: 100%;
+    }
+
+    .icon-button {
+        transform: scale(0.8);
+    }
+
+        .icon-button:hover {
+            transform: scale(0.9);
+            z-index: 1;
+        }
+
+    .container__form {
+        left: 21ch;
+        right: 2%;
+    }
+
+    .email_phone {
+        transform: scale(20);
+    }
+
+    .sendEmail {
+        height: 100%;
+        left: 1%;
+        overflow: hidden;
+        top: 0;
+        transition: transform 0.6s ease-in-out;
+        width: 150%;
+        z-index: 100;
+    }
+
+    .form__title_contact {
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 1rem;
+        font-size: 32px;
+        margin-top: 30px;
+    }
+}
