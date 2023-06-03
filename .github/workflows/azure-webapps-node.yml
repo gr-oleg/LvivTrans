@@ -73,6 +73,6 @@ jobs:
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+        app-name: ${{ lvivtrans }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISH_PROFILE_D3AB3866281744A4B80E52DF66A6CFC4 }}
+        package: ${{ lvivtrans }}
