@@ -14,21 +14,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Set up Node.js version
-        uses: actions/setup-node@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: '18.x'
+          node-version: '16'
 
       - name: npm install, build, and test
         run: |
           npm install
           npm run build --if-present
           npm run test --if-present
-          
-      - name: Check npm debug log
-        run: cat npm-debug.log || true
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -40,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -54,6 +52,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'lvivtrans'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D3AB3866281744A4B80E52DF66A6CFC4 }}
-          package: .
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_d4ddb940e30d4b73b061c6af4c10afd5 }}
+          package: . 
