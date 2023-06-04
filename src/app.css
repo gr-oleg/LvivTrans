@@ -61,6 +61,7 @@ a{
     border: none;
     outline: none;
     cursor: pointer;
+    color: var(--white);
 }
 
 .btn a{

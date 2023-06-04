@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "./login.css";
+import Cabinet from "../Cabinet/Cabinet";
+import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
+import { Message } from "protobufjs";
 
 const Login = () => {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [cab, setCab] = useState("");
 
-  const handleClick=(e)=>{
-    e.preventDefault()
-    const login={user, email, pass}
-    console.log(login)
-    fetch("http://localhost:8080/user/add",{
+  const handleClick = (e) => {
+    e.preventDefault();
+    const login = { user, email, pass };
+    console.log(login);
+    fetch("http://localhost:8080/user/add", {
       method: "POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(login)
-    }).then(()=>{
-      console.log("New user added")
-    })
-  }
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(login),
+    }).then(() => {
+      alert("New user added");
+    });
+  };
 
   const loginClick = (e) => {
     e.preventDefault();
@@ -34,19 +38,18 @@ const Login = () => {
         }
       })
       .then((data) => {
-        if (data && data.email) {
-          console.log("OK");
-          if (data.pass === pass) {
-            console.log("OK pass");
-          } else {
-            console.log("Incorrect password");
-          }
+        if (data && data.email && data.pass === pass) {
+          setCab("/map");
+        } else if (data.pass !== pass) {
+          alert("Пароль невірний!");
+        } else if (data.email !== email) {
+          alert("Емаіл невірний!");
         } else {
-          console.log("User not found");
+          alert("Емаіл невірний!");
         }
       })
       .catch((error) => {
-        console.error(error);
+        alert("Емаіл невірний!");
       });
   };
   
@@ -89,35 +92,56 @@ const Login = () => {
         <div className="container__form container--signup">
           <form action="#" className="form" id="form1">
             <h2 className="form__title">Sign Up</h2>
-            <input type="text" placeholder="User" className="input" 
-            value={user}
-            onChange={(e)=>setUser(e.target.value)}
+            <input
+              type="text"
+              placeholder="User"
+              className="input" 
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
             />
-            <input type="email" placeholder="Email" className="input" 
-            value={email}
-            onChange={(e)=>setEmail(e.target.value)}
+            <input
+              type="email"
+              placeholder="Email"
+              className="input" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <input type="password" placeholder="Password" className="input" 
-            value={pass}
-            onChange={(e)=>setPass(e.target.value)}
+            <input
+              type="password"
+              placeholder="Password"
+              className="input" 
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
             />
-            <button className="btnl" onClick={handleClick}>Sign Up</button>
+            <button className="btnl" onClick={handleClick} >Sign Up</button>
           </form>
         </div>
 
         <div className="container__form container--signin">
           <form action="#" className="form" id="form2">
             <h2 className="form__title">Sign In</h2>
-            <input type="email" placeholder="Email" className="input"
-            value={email}
-            onChange={(e)=>setEmail(e.target.value)}/>
-            <input type="password" placeholder="Password" className="input" 
-            value={pass}
-            onChange={(e)=>setPass(e.target.value)}/>
+            <input
+              type="email"
+              placeholder="Email"
+              className="input"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              className="input" 
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
+            />
             <a href="#1" className="link">
               Forgot your password?
             </a>
-            <button className="btnl" onClick={loginClick}>Sign In</button>
+            <button className="btns" onClick={loginClick}>
+            <Link to={cab} className="btnl" onMouseEnter={loginClick}>
+              Sign In
+            </Link>
+            </button>
           </form>
         </div>
 
@@ -136,7 +160,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-
     </body>
   );
 };
