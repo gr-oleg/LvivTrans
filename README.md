@@ -8,11 +8,15 @@ The app is built using React for the frontend and Java Spring for the backend, w
 
 Overall, LvivTrans aims to improve the public transportation experience in Lviv by providing users with real-time information and convenient booking options.
 
-# Getting Started with Create React App
+# Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+
+First, install the packages:
+
+### `npm i react-router-dom`
 
 In the project directory, you can run:
 
@@ -78,3 +82,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Lab4
+1. Zhovanuk Oleksandr
+2. <a href="https://github.com/fdsssawe/inkfinder" target="_blank">My project</a>
+3. <a href="https://github.com/fdsssawe/LvivTrans/pull/1" target="_blank">Pull request</a>
