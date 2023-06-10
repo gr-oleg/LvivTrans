@@ -4,8 +4,11 @@ import { FaBusAlt } from 'react-icons/fa'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { TbGridDots } from 'react-icons/tb'
 import { Link } from "react-router-dom";
+import isAuthenticated from "../../Components/Login/Login";
+
 
 const Navbar = () => {
+    const [cab, setCab] = useState("");
     const [active, setActive] = useState('navBar')
     //Functions show Nav
     const showNav = () => {
@@ -16,6 +19,14 @@ const Navbar = () => {
     const removeNavbar = () => {
         setActive('navBar')
     }
+
+    const handleCabinet = () => {
+        if (isAuthenticated) {
+          setCab("/cabinet");
+        } else {
+          setCab("/login");
+        }
+      };
 
     return (
         <section className='navBarSection'>
@@ -32,6 +43,10 @@ const Navbar = () => {
 
                         <li className="navItem">
                             <Link to="/home" className="navLink">Home</Link>
+                        </li>
+
+                        <li className="navItem">
+                            <Link to="http://localhost:8080/swagger-ui/index.html" className="navLink">Swagger UI</Link>
                         </li>
 
                         <li className="navItem">

@@ -9,19 +9,43 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [cab, setCab] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleClick = (e) => {
     e.preventDefault();
     const login = { user, email, pass };
     console.log(login);
     fetch("http://localhost:8080/user/add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(login),
-    }).then(() => {
-      alert("New user added");
-    });
-  };
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(login),
+    })
+        .then((response) => {
+            if (response.ok) {
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.includes("application/json")) {
+                    return response.json();
+                } else {
+                    return response.text();
+                }
+            } else if (response.status === 409) {
+                throw new Error("User already registered");
+            } else {
+                throw new Error("Error: " + response.status);
+            }
+        })
+        .then((data) => {
+            if (typeof data === "object") {
+                alert(data.message);
+            } else {
+                alert(data);
+            }
+        })
+        .catch((error) => {
+            alert(error.message);
+            console.error("Error:", error);
+        });
+};
 
   const loginClick = (e) => {
     e.preventDefault();
@@ -39,6 +63,7 @@ const Login = () => {
       })
       .then((data) => {
         if (data && data.email && data.pass === pass) {
+          setIsAuthenticated(true);
           setCab("/map");
         } else if (data.pass !== pass) {
           alert("Пароль невірний!");

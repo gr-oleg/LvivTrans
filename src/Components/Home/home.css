@@ -1,0 +1,108 @@
+.parallax {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    perspective: 1000px;
+    overflow: hidden;
+  }
+  
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .parallax__layer--back {
+    z-index: -3;
+  }
+
+  .parallax1__layer--back1 {
+    z-index: -2;
+  }
+  
+  .parallax__layer--base {
+    z-index: -1;
+  }
+  
+  .parallax__layer--front {
+    z-index: -0;
+  }
+
+  .parallax__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .yellow_bus {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+  } 
+
+  .parallax__text {
+    position: fixed;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(250, 230, 201);
+    text-shadow: 8px 8px 4px rgba(0, 0, 0, 0.6);;
+  }
+  
+  
+  .parallax__text-heading {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .parallax__button-container {
+    position: fixed;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .parallax__button {
+    background-color: transparent;
+    background-image: linear-gradient(90deg, transparent 0%, transparent 74%);
+    border-radius: 100px;
+    border: 1px solid transparent;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    padding: 0.9rem 4rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease-in-out;
+    background: #ffffff10;
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 100px;
+    gap: 1rem; 
+    border-color: var(--orangeColor);
+    border-width: 3px;
+  }
+  
+  .parallax__button:hover {
+    background: #ffffff10;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 100px;
+    gap: 1rem; 
+  }
+  
+  .parallax__button:hover {
+    background: var(--gradientColor2);
+  }
+  
+  

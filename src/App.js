@@ -7,6 +7,7 @@ import Login from "./Components/Login/Login";
 import Map from "./Components/Map/Map";
 import Navbar from "./Components/Navbar/Navbar";
 import Cabinet from "./Components/Cabinet/Cabinet";
+import Home from "./Components/Home/Home";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Router>
         <Navbar />
         <Routes>
+          <Route path="/home" element={<Home />} />
           <Route path="/map" element={<Map />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
