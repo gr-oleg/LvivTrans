@@ -3,6 +3,7 @@ import "./login.css";
 import Cabinet from "../Cabinet/Cabinet";
 import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
 import { Message } from "protobufjs";
+import { FcGoogle } from 'react-icons/fc'
 
 const Login = () => {
   const [user, setUser] = useState("");
@@ -45,6 +46,10 @@ const Login = () => {
             alert(error.message);
             console.error("Error:", error);
         });
+        if (user.trim() === "" || email.trim() === "" || pass.trim() === "") {
+          alert("Please fill in all fields");
+          return;
+        }
 };
 
   const loginClick = (e) => {
@@ -76,6 +81,10 @@ const Login = () => {
       .catch((error) => {
         alert("Емаіл невірний!");
       });
+      if (email.trim() === "" || pass.trim() === "") {
+        alert("Please fill in all fields");
+        return;
+      }
   };
   
   useEffect(() => {
@@ -159,14 +168,11 @@ const Login = () => {
               value={pass}
               onChange={(e) => setPass(e.target.value)}
             />
-            <a href="#1" className="link">
-              Forgot your password?
-            </a>
-            <button className="btns" onClick={loginClick}>
-            <Link to={cab} className="btnl" onMouseEnter={loginClick}>
-              Sign In
-            </Link>
-            </button>
+             <button className="btns" onClick={loginClick}>
+           <Link to={cab} className="btnl" onMouseEnter={loginClick}>
+               Sign In
+              </Link>
+              </button>
           </form>
         </div>
 
@@ -176,11 +182,29 @@ const Login = () => {
               <button className="btnl" id="signIn">
                 Sign In
               </button>
+              <div className="row">
+               <span className="spacer"></span>
+               <a className="or">or</a>
+                <span className="spacer"></span>
+              <a href="" target="_blank" className="icon-button gg">
+              <FcGoogle className="icon-gg" />
+           <span></span>
+           </a>
+            </div>
             </div>
             <div className="overlay__panel overlay--right">
               <button className="btnl" id="signUp">
                 Sign Up
               </button>
+              <div className="row">
+               <span className="spacer"></span>
+               <a className="or">or</a>
+                <span className="spacer"></span>
+              <a href="" target="_blank" className="icon-button gg">
+              <FcGoogle className="icon-gg" />
+           <span></span>
+           </a>
+            </div>
             </div>
           </div>
         </div>
