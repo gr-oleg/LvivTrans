@@ -157,6 +157,9 @@
 .icon-button .icon-italic {
   color: #db5a3c;
 }
+.icon-button .icon-gg {
+  color: #ca8a00;
+}
 
 .icon-button:hover .icon-linkedin,
 .icon-button:hover .icon-github,

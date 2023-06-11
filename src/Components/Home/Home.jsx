@@ -10,6 +10,8 @@ import isAuthenticated from "../../Components/Login/Login";
 import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
 import 'aos/dist/aos.css';
 import Aos from "aos";
+import { FaAngleDown } from 'react-icons/fa'
+import { Link as ScrollLink } from "react-scroll";
 
 const Home = () => {
   const textRef = useRef(null);
@@ -94,22 +96,29 @@ const Home = () => {
           Start
           </Link>
        </div>
-
     </div>
 
-    <div>
+    <div className="row1-container" style={{ position: "fixed", top: "90%", left: "50%", transform: "translate(-50%, -50%)" }}>
+  <span className="spacer1"></span>
+  <div className="or-container">
+    <span className="or-text">About</span>
+    <ScrollLink to="div2" smooth={true} duration={500} className="link">
+    <a href="" target="_blank" className="icon-button gg">
+      <FaAngleDown className="icon-gg" />
+      <span></span>
+    </a>
+    </ScrollLink>
+  </div>
+  <span className="spacer1"></span>
+</div>
+
+    <div2 id="div2"> 
      <section className='about'>
       <img src={image5} alt="Layer 4" className="yellow_bus" />
       <div className="aboutContent">
-                <div className="textDiv">
 
-                    <h1 data-aos="fade-up" className="aboutTitle">
-                       
-                    </h1>
-                </div>
-
-                <div className="cardDiv1" data-aos="fade-up-right" data-aos-duration="4000">
-                        <span className="h2">
+                <div className="cardDiv1" data-aos="fade-up-right">
+                        <span>
                         LvivTrans is a web application designed to help citizens and tourists navigate the public transportation system in Lviv, Ukraine. The app provides real-time GPS tracking of buses, trams, and trolleybuses, allowing users to track their location and estimated arrival times.
                         </span>
                 </div>
@@ -133,21 +142,14 @@ const Home = () => {
                 </div>
             </div>
         </section>
-    </div>
+    </div2>
 
-    <div >
+    <div3 id="div3" >
      <section className='about'>
             <video src={video} muted autoPlay loop type="video/mp4"></video>
             <div className="aboutContent">
-                <div className="textDiv">
-
-                    <h1 data-aos="fade-up" className="aboutTitle">
-                       
-                    </h1>
-                </div>
-
                 <div className="cardDiv1" data-aos="fade-up-right" data-aos-duration="4000">
-                        <span className="h2">
+                        <span>
                         LvivTrans is a web application designed to help citizens and tourists navigate the public transportation system in Lviv, Ukraine. The app provides real-time GPS tracking of buses, trams, and trolleybuses, allowing users to track their location and estimated arrival times.
                         </span>
                 </div>
@@ -164,14 +166,10 @@ const Home = () => {
                         </span>
                 </div>
 
-                <div className="cardDiv2" data-aos="fade-up-left">
-                    <span>
-                    The app is built using React for the frontend and Java Spring for the backend, with a PostgreSQL database to store and manage data. It also integrates with the Mapbox API to provide accurate and up-to-date maps and location data.
-                    </span>
-                </div>
             </div>
         </section>
-    </div>
+    </div3>
+
     </div>
   );
 };

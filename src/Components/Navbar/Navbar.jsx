@@ -50,10 +50,6 @@ const Navbar = () => {
                         </li>
 
                         <li className="navItem">
-                            <Link to="/about" className="navLink">About</Link>
-                        </li>
-
-                        <li className="navItem">
                             <Link to="/contact" className="navLink">Contact</Link>
                         </li>
 

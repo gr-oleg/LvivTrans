@@ -35,9 +35,9 @@ video{
 }
 
 .aboutContent{
-    width: 90%;
+    width: 80%;
     height: max-content;
-    padding: 8rem 1.5rem 3rem;
+    padding: 6rem 1rem 1rem;
     display: flex;
     row-gap: 3rem;
     flex-direction: column;
@@ -51,7 +51,7 @@ video{
 .cardDiv1{
     width: 60%;
     position: relative;
-    padding: 1.8rem 1rem;
+    padding: 1.8rem 2rem;
     background: #ffffff10;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -63,7 +63,7 @@ video{
     margin-left: auto;
     width: 60%;
     position: relative;
-    padding: 1.8rem 1rem;
+    padding: 1.8rem 2rem;
     background: #ffffff10;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
