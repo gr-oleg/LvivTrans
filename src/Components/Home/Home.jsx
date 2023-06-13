@@ -62,14 +62,6 @@ const Home = () => {
     };
   }, []);
 
-  const handleStart = () => {
-    if (isAuthenticated) {
-      setCab("/map");
-    } else {
-      setCab("/login");
-    }
-  };
-
   return (
     <div>
     <div className="parallax" id="parallax" >
@@ -92,7 +84,7 @@ const Home = () => {
         <h1 className="parallax__text-heading">LvivTrans.</h1>
       </div>
       <div className="parallax__button-container" data-aos="zoom-out">
-         <Link to={cab} className="parallax__button" style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} onClick={handleStart}>
+         <Link to="/map" className="parallax__button" style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
           Start
           </Link>
        </div>

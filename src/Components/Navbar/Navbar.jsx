@@ -33,7 +33,7 @@ const Navbar = () => {
             <header className="header flex">
 
                 <div className="logoDiv">
-                    <a href="#" className="logo flex">
+                    <a href="/" className="logo flex">
                         <h1><FaBusAlt className="icon"/>  LvivTrans.</h1>
                     </a>
                 </div>
@@ -42,11 +42,15 @@ const Navbar = () => {
                     <ul className="navLists flex">
 
                         <li className="navItem">
-                            <Link to="/home" className="navLink">Home</Link>
+                            <Link to="/" className="navLink">Home</Link>
                         </li>
 
                         <li className="navItem">
                             <Link to="http://localhost:8080/swagger-ui/index.html" className="navLink">Swagger UI</Link>
+                        </li>
+
+                        <li className="navItem">
+                            <Link to="/cabinet" className="navLink">Profile</Link>
                         </li>
 
                         <li className="navItem">

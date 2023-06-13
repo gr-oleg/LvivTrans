@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./login.css";
 import Cabinet from "../Cabinet/Cabinet";
-import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Message } from "protobufjs";
 import { FcGoogle } from 'react-icons/fc'
 
-const Login = () => {
+const Login = ({ onLogin }) => {
+  const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const [cab, setCab] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onLogin(email);
+  };
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -52,40 +57,41 @@ const Login = () => {
         }
 };
 
-  const loginClick = (e) => {
-    e.preventDefault();
-    const url = `http://localhost:8080/user/${email}?pass=${pass}`;
-    fetch(url, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Network response was not ok");
-        }
-      })
-      .then((data) => {
-        if (data && data.email && data.pass === pass) {
-          setIsAuthenticated(true);
-          setCab("/map");
-        } else if (data.pass !== pass) {
-          alert("Пароль невірний!");
-        } else if (data.email !== email) {
-          alert("Емаіл невірний!");
-        } else {
-          alert("Емаіл невірний!");
-        }
-      })
-      .catch((error) => {
-        alert("Емаіл невірний!");
-      });
-      if (email.trim() === "" || pass.trim() === "") {
-        alert("Please fill in all fields");
-        return;
+const loginClick = (e) => {
+  e.preventDefault();
+  const url = `http://localhost:8080/user/${email}?pass=${pass}`;
+  fetch(url, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Network response was not ok");
       }
-  };
+    })
+    .then((data) => {
+      if (data && data.email && data.pass === pass) {
+        setIsAuthenticated(true);
+        navigate(`/cabinet?email=${email}`);
+      } else if (data.pass !== pass) {
+        alert("Password is incorrect!");
+      } else if (data.email !== email) {
+        alert("Email is incorrect!");
+      } else {
+        alert("Email is incorrect!");
+      }
+    })
+    .catch((error) => {
+      alert("Email is incorrect!");
+    });
+  if (email.trim() === "" || pass.trim() === "") {
+    alert("Please fill in all fields");
+    return;
+  }
+};
+
   
   useEffect(() => {
     const signInBtn = document.getElementById("signIn");
@@ -151,30 +157,31 @@ const Login = () => {
           </form>
         </div>
 
-        <div className="container__form container--signin">
-          <form action="#" className="form" id="form2">
-            <h2 className="form__title">Sign In</h2>
-            <input
-              type="email"
-              placeholder="Email"
-              className="input"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              className="input" 
-              value={pass}
-              onChange={(e) => setPass(e.target.value)}
-            />
-             <button className="btns" onClick={loginClick}>
-           <Link to={cab} className="btnl" onMouseEnter={loginClick}>
-               Sign In
-              </Link>
-              </button>
-          </form>
-        </div>
+<div className="container__form container--signin">
+  <form action="#" className="form" id="form2" onSubmit={handleSubmit}>
+    <h2 className="form__title">Sign In</h2>
+    <input
+      type="email"
+      placeholder="Email"
+      className="input"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+    />
+    <input
+      type="password"
+      placeholder="Password"
+      className="input" 
+      value={pass}
+      onChange={(e) => setPass(e.target.value)}
+    />
+    <button type="submit" className="btns">
+      <Link to={{ pathname: "/cabinet", state: { email: email } }} className="btnl" onClick={loginClick}>
+        Sign In
+      </Link>
+    </button>
+  </form>
+</div>
+
 
         <div className="container__overlay">
           <div className="overlay">
@@ -208,9 +215,18 @@ const Login = () => {
             </div>
           </div>
         </div>
+        <div>
+       </div>
+      </div>
+      <div>
+      <div>
+        <Link to={`/cabinet?email=${email}`}>Go to Cabinet</Link>
+      </div>
       </div>
     </body>
+    
   );
+  
 };
 
 export default Login;

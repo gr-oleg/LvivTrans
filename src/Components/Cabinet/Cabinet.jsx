@@ -1,33 +1,77 @@
 import React, { useEffect, useState } from "react";
-import './cabinet.css'
-
+import "./cabinet.css";
+import image from "../../Assets/AvatarProfile.png";
+import Login from "../../Components/Login/Login";
 
 const Cabinet = () => {
-    const [showMessage, setShowMessage] = useState(false);
+  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [id, setId] = useState("");
 
-    const handleButtonClick = () => {
-      setShowMessage(true);
-      setTimeout(() => {
-        setShowMessage(false);
-      }, 3000); // Час, протягом якого повідомлення буде відображатися (в мілісекундах)
-    };
-  
-    return (
-      <div>
-        <h1 className="home">Cabinet</h1>
-<h1 className="home">Cabinet</h1>
-<h1 className="home">Cabinet</h1>
-<h1 className="home">Cabinet</h1>
-<h1 className="home">Cabinet</h1>
-<h1 className="home">Cabinet</h1>
-        {showMessage && (
-          <div style={{ backgroundColor: 'yellow', padding: '10px' }}>
-            Це випливаюче повідомлення!
-          </div>
-        )}
-        <button onClick={handleButtonClick}>Показати повідомлення</button>
-      </div>
-    );
+  const handleLogin = (email) => {
+    setEmail(email);
   };
   
-export default Cabinet
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        setEmail(email);
+        const response = await fetch(`http://localhost:8080/user/${email}`, {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+        const userData = await response.json();
+        setUser(userData.user);
+        setPass(userData.pass);
+        setId(userData.id);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUserData();
+  }, [email]);
+
+  const handleEditProfile = () => {
+    // Обробник для редагування профілю
+  };
+
+  const handleDeleteProfile = () => {
+    // Обробник для видалення профілю
+  };
+
+  const handleLogout = () => {
+    // Обробник для виходу з профілю
+  };
+
+  return (
+    <div className="profile">
+      <div className="profile-page">
+        <div className="profile-picture">
+          <img src={image} alt="Profile" className="profile-image" />
+        </div>
+        <div className="profile-data">
+          <h2>User: {user}</h2>
+          <p>Id: {id}</p>
+          <p>Email: {email}</p>
+          <p>Password: {pass}</p>
+        </div>
+        <div className="profile-buttons">
+          <button className="delete-button" onClick={handleDeleteProfile}>
+            Delete
+          </button>
+          <button className="edit-button" onClick={handleEditProfile}>
+            Edit
+          </button>
+          <button className="exit-button" onClick={handleLogout}>
+            Exit
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Cabinet;
