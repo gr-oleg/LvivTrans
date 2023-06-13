@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'lvivtrans'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C5DCA80CF1F6430F93F1ECD63C0613E9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CD51DFC33C6345A9B027C194BE9506F4 }}
           package: .
