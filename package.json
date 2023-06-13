@@ -30,9 +30,9 @@
     "webpack": "^5.80.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "start": "CI=false react-scripts start",    
+    "build": "CI=false react-scripts build",
+    "eject": "CI=false react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
