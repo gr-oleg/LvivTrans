@@ -21,7 +21,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     const login = { user, email, pass };
     console.log(login);
-    fetch("http://localhost:8080/user/add", {
+    fetch("https://lvivtrans-back.azurewebsites.net/user/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(login),
@@ -59,7 +59,7 @@ const Login = ({ onLogin }) => {
 
 const loginClick = (e) => {
   e.preventDefault();
-  const url = `http://localhost:8080/user/${email}?pass=${pass}`;
+  const url = `https://lvivtrans-back.azurewebsites.net/user/${email}?pass=${pass}`;
   fetch(url, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
@@ -215,13 +215,6 @@ const loginClick = (e) => {
             </div>
           </div>
         </div>
-        <div>
-       </div>
-      </div>
-      <div>
-      <div>
-        <Link to={`/cabinet?email=${email}`}>Go to Cabinet</Link>
-      </div>
       </div>
     </body>
     

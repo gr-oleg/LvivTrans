@@ -46,7 +46,7 @@ const Navbar = () => {
                         </li>
 
                         <li className="navItem">
-                            <Link to="http://localhost:8080/swagger-ui/index.html" className="navLink">Swagger UI</Link>
+                            <Link to="https://lvivtrans-back.azurewebsites.net/swagger-ui/index.html#/" className="navLink">Swagger UI</Link>
                         </li>
 
                         <li className="navItem">

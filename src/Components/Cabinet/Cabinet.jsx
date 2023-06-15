@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./cabinet.css";
 import image from "../../Assets/AvatarProfile.png";
-import Login from "../../Components/Login/Login";
 
 const Cabinet = () => {
   const [user, setUser] = useState("");
@@ -9,16 +8,12 @@ const Cabinet = () => {
   const [pass, setPass] = useState("");
   const [id, setId] = useState("");
 
-  const handleLogin = (email) => {
-    setEmail(email);
-  };
   
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        setEmail(email);
-        const response = await fetch(`http://localhost:8080/user/${email}`, {
+        const response = await fetch(`https://lvivtrans-back.azurewebsites.net/user/${email}`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
