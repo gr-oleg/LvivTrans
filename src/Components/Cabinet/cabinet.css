@@ -33,8 +33,16 @@
 }
 
 .profile-data {
+  background: #ffffff10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
   text-align: center;
   margin-top: 20px;
+  color: white;
+  -webkit-text-stroke: 0.8px black;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .profile-buttons {

@@ -4,12 +4,14 @@ import Cabinet from "../Cabinet/Cabinet";
 import { Link, useNavigate } from "react-router-dom";
 import { Message } from "protobufjs";
 import { FcGoogle } from 'react-icons/fc'
+import Aos from "aos";
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [id, setId] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleSubmit = (e) => {
@@ -57,6 +59,17 @@ const Login = ({ onLogin }) => {
         }
 };
 
+const handleLogout = () => {
+  // Perform logout logic here
+  // ...
+
+  // Clear user data and set isAuthenticated to false
+  localStorage.removeItem("isAuthenticated");
+  localStorage.removeItem("email"); // Додайте цей рядок для видалення збереженого email
+  setIsAuthenticated(false);
+  setEmail(""); // Додайте цей рядок для очищення значення email
+};
+
 const loginClick = (e) => {
   e.preventDefault();
   const url = `https://lvivtrans-back.azurewebsites.net/user/${email}?pass=${pass}`;
@@ -74,7 +87,9 @@ const loginClick = (e) => {
     .then((data) => {
       if (data && data.email && data.pass === pass) {
         setIsAuthenticated(true);
-        navigate(`/cabinet?email=${email}`);
+        localStorage.setItem("isAuthenticated", true);
+        localStorage.setItem("email", email);
+        localStorage.setItem("userData", JSON.stringify({ email, user, id, pass }));
       } else if (data.pass !== pass) {
         alert("Password is incorrect!");
       } else if (data.email !== email) {
@@ -94,12 +109,34 @@ const loginClick = (e) => {
 
   
   useEffect(() => {
+    const storedIsAuthenticated = localStorage.getItem("isAuthenticated");
+    if (storedIsAuthenticated) {
+      setIsAuthenticated(true);
+      const storedUserData = localStorage.getItem("userData");
+    if (storedUserData) {
+      const { email, user, id, pass } = JSON.parse(storedUserData);
+      setEmail(email);
+      setUser(user);
+      setId(id);
+      setPass(pass);
+    }
+    }
+    const handleLogout = () => {
+      // Perform logout logic here
+      // ...
+  
+      // Clear user data and set isAuthenticated to false
+      localStorage.removeItem("isAuthenticated");
+      localStorage.removeItem("userData");
+      setIsAuthenticated(false);
+    };
     const signInBtn = document.getElementById("signIn");
     const signUpBtn = document.getElementById("signUp");
     const fistForm = document.getElementById("form1");
     const secondForm = document.getElementById("form2");
     const container = document.querySelector(".container");
 
+    if (signInBtn && signUpBtn && fistForm && secondForm && container) {
     signInBtn.addEventListener("click", () => {
       container.classList.remove("right-panel-active");
     });
@@ -124,11 +161,17 @@ const loginClick = (e) => {
       fistForm.removeEventListener("submit", (e) => e.preventDefault());
       secondForm.removeEventListener("submit", (e) => e.preventDefault());
     };
+  }
   }, []);
 
   return (
     <body className="login">
-      <div className="container right-panel-active">
+       {isAuthenticated ? (
+        <div className="cab">
+        <Cabinet email={email} setEmail={setEmail} onLogout={handleLogout}/>
+        </div>
+      ) : (
+        <div className="container right-panel-active">
         <div className="container__form container--signup">
           <form action="#" className="form" id="form1">
             <h2 className="form__title">Sign Up</h2>
@@ -216,6 +259,7 @@ const loginClick = (e) => {
           </div>
         </div>
       </div>
+      )}
     </body>
     
   );

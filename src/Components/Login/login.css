@@ -248,4 +248,9 @@
     color: #fff;
     font-size: 22px;
 }
+
+.cab {
+    margin-top: -100px;
+    position: absolute;
+}
   
