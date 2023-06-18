@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { Message } from "protobufjs";
 import { FcGoogle } from 'react-icons/fc'
 import Aos from "aos";
+import Footer from "../../Components/footer/footer";
+
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
@@ -22,12 +24,17 @@ const Login = ({ onLogin }) => {
   const handleClick = (e) => {
     e.preventDefault();
     const login = { user, email, pass };
+    if (user.trim() === "" || email.trim() === "" || pass.trim() === "") {
+      alert("Please fill in all fields");
+      return;
+    }else{
     console.log(login);
     fetch("https://lvivtrans-back.azurewebsites.net/user/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(login),
     })
+
         .then((response) => {
             if (response.ok) {
                 const contentType = response.headers.get("content-type");
@@ -42,22 +49,19 @@ const Login = ({ onLogin }) => {
                 throw new Error("Error: " + response.status);
             }
         })
-        .then((data) => {
+        .then((data) => {{
             if (typeof data === "object") {
                 alert(data.message);
             } else {
                 alert(data);
             }
+          }
         })
         .catch((error) => {
             alert(error.message);
             console.error("Error:", error);
         });
-        if (user.trim() === "" || email.trim() === "" || pass.trim() === "") {
-          alert("Please fill in all fields");
-          return;
-        }
-};
+  }};
 
 const handleLogout = () => {
   // Perform logout logic here
@@ -165,6 +169,7 @@ const loginClick = (e) => {
   }, []);
 
   return (
+    <div>
     <body className="login">
        {isAuthenticated ? (
         <div className="cab">
@@ -261,6 +266,8 @@ const loginClick = (e) => {
       </div>
       )}
     </body>
+    <Footer/>
+    </div>
     
   );
   

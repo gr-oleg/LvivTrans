@@ -54,7 +54,7 @@ const Cabinet = ({ email, setEmail, onLogout, setIsAuthenticated }) => {
           <img src={image} alt="Profile" className="profile-image" />
         </div>
         <div className="profile-data">
-          <h1>Hello, {user}</h1>
+          <h1>{user}</h1>
           <h2>Id: {id}</h2>
           <h2>Email: {email}</h2>
           <h2>Password: {pass}</h2>

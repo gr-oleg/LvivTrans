@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import './about.css'
-import video from '../../Assets/video.mp4'
 import 'aos/dist/aos.css';
 import Aos from "aos";
 
@@ -13,7 +12,6 @@ const About = () => {
     return (
         <section className='about'>
             <div></div>
-            <video src={video} muted autoPlay loop type="video/mp4"></video>
 
             <div className="aboutContent">
                 <div className="textDiv">

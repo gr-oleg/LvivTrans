@@ -139,3 +139,17 @@ li:hover::after{
     border-radius: 10px;
 }
 
+.Footer {
+    background-color: hsl(0, 0%, 93%);;
+    color: hsl(240, 4%, 36%);;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 2000;
+    box-shadow: 0 2px 5px rgba(2, 15, 29, 0.904);
+}

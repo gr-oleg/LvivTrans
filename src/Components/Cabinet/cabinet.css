@@ -10,6 +10,8 @@
     hsl(0, 97%, 30%));
     --gradientColorExit: linear-gradient(to right, hsl(123, 83%, 43%), 
     hsl(123, 96%, 26%));
+    --gradientColorText: linear-gradient(to right, hsl(187, 85%, 43%),
+    hsl(199, 100%, 33%));
 }    
     
 .profile-page {
@@ -19,11 +21,11 @@
 }
 
 .profile-picture {
-  width: 200px;
+  width: 180px;
   height: auto;
   border-radius: 50%;
   overflow: hidden;
-  margin-top: 100px;
+  margin-top: 42px;
 }
 
 .profile-image {
@@ -34,22 +36,23 @@
 
 .profile-data {
   background: #ffffff10;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(3px);
   border-radius: 10px;
   text-align: center;
-  margin-top: 20px;
-  color: white;
+  margin-top: 10px;
+  color: hsl(200, 6%, 90%);
   -webkit-text-stroke: 0.8px black;
   font-size: 0.9rem;
   font-weight: 600;
+  width: 400px;
 }
+
 
 .profile-buttons {
     display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -60px;
+  margin-top: -80px;
 }
 
 .edit-button,
@@ -64,7 +67,7 @@
     letter-spacing: 0.12rem;
     padding: 0.6rem 2rem;
     text-transform: uppercase;
-    margin-bottom: -90px;
+    margin-bottom: -92px;
     transition: transform 80ms ease-in;
     margin-top: 100px;
 }

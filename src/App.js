@@ -6,6 +6,7 @@ import Contact from "./Components/Contact/Contact";
 import Login from "./Components/Login/Login";
 import Map from "./Components/Map/Map";
 import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/footer/footer";
 import Cabinet from "./Components/Cabinet/Cabinet";
 import Home from "./Components/Home/Home";
 
@@ -22,6 +23,7 @@ const App = () => {
     <>
       <Router>
         <Navbar />
+        <Footer />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/map" element={<Map />} />

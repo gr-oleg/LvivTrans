@@ -12,6 +12,8 @@ import 'aos/dist/aos.css';
 import Aos from "aos";
 import { FaAngleDown } from 'react-icons/fa'
 import { Link as ScrollLink } from "react-scroll";
+import Footer from "../../Components/footer/footer";
+
 
 const Home = () => {
   const textRef = useRef(null);
@@ -161,7 +163,6 @@ const Home = () => {
             </div>
         </section>
     </div3>
-
     </div>
   );
 };
