@@ -6,11 +6,14 @@ import { Message } from "protobufjs";
 import { FcGoogle } from 'react-icons/fc'
 import Aos from "aos";
 import Footer from "../../Components/footer/footer";
+import { GoogleLogin } from '@react-oauth/google';
+import jwt_decode from "jwt-decode";
 
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [id, setId] = useState("");
@@ -20,6 +23,22 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     onLogin(email);
   };
+
+  const handleGoogleLogin = (credentialResponse) => {
+    const decodedToken = jwt_decode(credentialResponse.credential);
+    const { name, email } = decodedToken;
+  
+    localStorage.setItem("isAuthenticated", true);
+    localStorage.setItem("email", email);
+    localStorage.setItem("name", name);
+  
+    setName(name);
+    setEmail(email);
+    setIsAuthenticated(true);
+
+
+  };
+  
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -64,18 +83,23 @@ const Login = ({ onLogin }) => {
   }};
 
 const handleLogout = () => {
-  // Perform logout logic here
-  // ...
-
-  // Clear user data and set isAuthenticated to false
   localStorage.removeItem("isAuthenticated");
-  localStorage.removeItem("email"); // Додайте цей рядок для видалення збереженого email
+  localStorage.removeItem("email");
+  localStorage.removeItem("user");
+  localStorage.removeItem("id");
+  localStorage.removeItem("pass");
+  localStorage.removeItem("userData");
   setIsAuthenticated(false);
-  setEmail(""); // Додайте цей рядок для очищення значення email
+  setEmail("");
+  window.location.reload();
 };
 
 const loginClick = (e) => {
   e.preventDefault();
+  if (email.trim() === "" || pass.trim() === "") {
+    alert("Please fill in all fields");
+    return;
+  }else{
   const url = `https://lvivtrans-back.azurewebsites.net/user/${email}?pass=${pass}`;
   fetch(url, {
     method: "GET",
@@ -105,35 +129,31 @@ const loginClick = (e) => {
     .catch((error) => {
       alert("Email is incorrect!");
     });
-  if (email.trim() === "" || pass.trim() === "") {
-    alert("Please fill in all fields");
-    return;
   }
+};
+
+const loadUserData = () => {
+  const storedIsAuthenticated = localStorage.getItem("isAuthenticated");
+  if (storedIsAuthenticated) {
+    setIsAuthenticated(true);
+    const storedUserData = localStorage.getItem("userData");
+    const email = localStorage.getItem("email");
+    onLogin(email);
+    setEmail("");
+    setIsAuthenticated(true);
+  if (storedUserData) {
+    const { email, user, id, pass } = JSON.parse(storedUserData);
+    setEmail(email);
+    setUser(user);
+    setId(id);
+    setPass(pass);
+  }}
 };
 
   
   useEffect(() => {
-    const storedIsAuthenticated = localStorage.getItem("isAuthenticated");
-    if (storedIsAuthenticated) {
-      setIsAuthenticated(true);
-      const storedUserData = localStorage.getItem("userData");
-    if (storedUserData) {
-      const { email, user, id, pass } = JSON.parse(storedUserData);
-      setEmail(email);
-      setUser(user);
-      setId(id);
-      setPass(pass);
-    }
-    }
-    const handleLogout = () => {
-      // Perform logout logic here
-      // ...
-  
-      // Clear user data and set isAuthenticated to false
-      localStorage.removeItem("isAuthenticated");
-      localStorage.removeItem("userData");
-      setIsAuthenticated(false);
-    };
+    loadUserData();
+    
     const signInBtn = document.getElementById("signIn");
     const signUpBtn = document.getElementById("signUp");
     const fistForm = document.getElementById("form1");
@@ -173,7 +193,12 @@ const loginClick = (e) => {
     <body className="login">
        {isAuthenticated ? (
         <div className="cab">
-        <Cabinet email={email} setEmail={setEmail} onLogout={handleLogout}/>
+        <Cabinet email={email} setEmail={setEmail} onLogout={handleLogout} name={name}/>
+        <div className="profile-buttons">
+          <button className="exit-button" onClick={handleLogout}>
+            Exit
+          </button>
+        </div>
         </div>
       ) : (
         <div className="container right-panel-active">
@@ -230,7 +255,6 @@ const loginClick = (e) => {
   </form>
 </div>
 
-
         <div className="container__overlay">
           <div className="overlay">
             <div className="overlay__panel overlay--left">
@@ -239,26 +263,31 @@ const loginClick = (e) => {
               </button>
               <div className="row">
                <span className="spacer"></span>
-               <a className="or">or</a>
-                <span className="spacer"></span>
-              <a href="" target="_blank" className="icon-button gg">
-              <FcGoogle className="icon-gg" />
+               <span className="or">or</span>
+
+               
+                <GoogleLogin  onSuccess={handleGoogleLogin
+                  }
+                  onError={() => {
+                    console.log('Login Failed');
+                  }}/>
+
            <span></span>
-           </a>
             </div>
             </div>
             <div className="overlay__panel overlay--right">
               <button className="btnl" id="signUp">
                 Sign Up
               </button>
-              <div className="row">
+              <div className="row2">
                <span className="spacer"></span>
-               <a className="or">or</a>
                 <span className="spacer"></span>
-              <a href="" target="_blank" className="icon-button gg">
-              <FcGoogle className="icon-gg" />
            <span></span>
-           </a>
+            </div>
+            <div className="row2">
+               <span className="spacer"></span>
+                <span className="spacer"></span>
+           <span></span>
             </div>
             </div>
           </div>

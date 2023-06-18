@@ -2,12 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./cabinet.css";
 import image from "../../Assets/AvatarProfile.png";
 
-const Cabinet = ({ email, setEmail, onLogout, setIsAuthenticated }) => {
+const Cabinet = ({ email, setEmail, onLogout, setIsAuthenticated, name }) => {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
-  const [id, setId] = useState("");
-
-  
+  const [id, setId] = useState("");  
 
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
@@ -24,28 +22,15 @@ const Cabinet = ({ email, setEmail, onLogout, setIsAuthenticated }) => {
         setUser(userData.user);
         setPass(userData.pass);
         setId(userData.id);
+        if (name !== "") {
+          setUser("");}
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
     };
 
     fetchUserData();
-  }, [setEmail]);
-
-  const handleEditProfile = () => {
-    // Обробник для редагування профілю
-  };
-
-  const handleDeleteProfile = () => {
-    // Обробник для видалення профілю
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated");
-    localStorage.removeItem("email"); // Додайте цей рядок для видалення збереженого email
-    setIsAuthenticated(false);
-    setEmail(""); // Додайте цей рядок для очищення значення email
-  };
+  }, [setEmail]);  
 
   return (
     <div className="profile">
@@ -54,21 +39,10 @@ const Cabinet = ({ email, setEmail, onLogout, setIsAuthenticated }) => {
           <img src={image} alt="Profile" className="profile-image" />
         </div>
         <div className="profile-data">
-          <h1>{user}</h1>
-          <h2>Id: {id}</h2>
+          <h1>{user}{name}</h1>
+          {id && <h2>Id: {id}</h2>}
           <h2>Email: {email}</h2>
-          <h2>Password: {pass}</h2>
-        </div>
-        <div className="profile-buttons">
-          <button className="delete-button" onClick={handleDeleteProfile}>
-            Delete
-          </button>
-          <button className="edit-button" onClick={handleEditProfile}>
-            Edit
-          </button>
-          <button className="exit-button" onClick={handleLogout}>
-            Exit
-          </button>
+          {pass && <h2>Password: {pass}</h2>}
         </div>
       </div>
     </div>

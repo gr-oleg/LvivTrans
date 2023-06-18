@@ -9,6 +9,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/footer/footer";
 import Cabinet from "./Components/Cabinet/Cabinet";
 import Home from "./Components/Home/Home";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <>
       <Router>
+      <GoogleOAuthProvider clientId="874273831084-pvjoitl4f2d5isgs1dgkae0esh128k5c.apps.googleusercontent.com">
         <Navbar />
         <Footer />
         <Routes>
@@ -30,8 +32,9 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cabinet" element={<Cabinet />} />
-          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+           <Route path="/login" element={<Login onLogin={handleLogin} />} />
         </Routes>
+        </GoogleOAuthProvider>
       </Router>
     </>
   );

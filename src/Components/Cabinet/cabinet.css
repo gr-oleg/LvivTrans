@@ -4,14 +4,8 @@
     --gray: #333;
     --blue: #0367a6;
     --lightblue: #008997;
-    --gradientColorEdit: linear-gradient(to right, hsl(58, 95%, 42%), 
-    hsl(58, 94%, 32%));
-    --gradientColorDelete: linear-gradient(to right, hsl(0, 76%, 64%), 
+    --gradientColorExit: linear-gradient(to right, hsl(0, 76%, 64%), 
     hsl(0, 97%, 30%));
-    --gradientColorExit: linear-gradient(to right, hsl(123, 83%, 43%), 
-    hsl(123, 96%, 26%));
-    --gradientColorText: linear-gradient(to right, hsl(187, 85%, 43%),
-    hsl(199, 100%, 33%));
 }    
     
 .profile-page {
@@ -55,8 +49,6 @@
   margin-top: -80px;
 }
 
-.edit-button,
-.delete-button,
 .exit-button {
     width: 150px;
     border-radius: 30px;
@@ -72,17 +64,9 @@
     margin-top: 100px;
 }
 
-.edit-button{
-    background-image: var(--gradientColorEdit);
-    border: 2px solid #a0a010;
-}
-.delete-button{
-    background-image: var(--gradientColorDelete);
-    border: 2px solid #8a1010;
-}
 .exit-button{
     background-image: var(--gradientColorExit);
-    border: 2px solid #118917;
+    border: 2px solid #8a1010;
 }
 
 .edit-button:hover,
