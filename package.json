@@ -6,7 +6,6 @@
     "@emailjs/browser": "^3.11.0",
     "@react-oauth/google": "^0.11.0",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@uiball/loaders": "^1.2.6",
     "aos": "^2.3.4",
@@ -19,11 +18,12 @@
     "node": "^19.8.1",
     "protobufjs": "^7.2.3",
     "react": "^18.2.0",
+    "react-azure-maps": "^0.4.7",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-icon": "^1.0.0",
     "react-icons": "^4.8.0",
-    "react-map-gl": "^7.0.21",
+    "react-map-gl": "^7.0.25",
     "react-router-dom": "^6.11.1",
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.9",
@@ -33,6 +33,7 @@
     "webpack": "^5.80.0"
   },
   "scripts": {
+    "test": "jest",
     "start": "CI=false react-scripts start",
     "build": "CI=false react-scripts build",
     "eject": "CI=false react-scripts eject"
@@ -53,6 +54,25 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/react-map-gl": "^6.1.3",
+    "babel-jest": "^29.5.0",
+    "css-loader": "^6.8.1",
+    "jest": "^27.5.1",
+    "style-loader": "^3.3.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/",
+      "^.+\\.css$"
     ]
   }
 }

@@ -125,13 +125,13 @@ const Home = () => {
 
                 <div className="cardDiv1" data-aos="fade-up-right">
                         <span className="h2">
-                        The app is built using React for the frontend and Java Spring for the backend, with a PostgreSQL database to store and manage data. It also integrates with the Mapbox API to provide accurate and up-to-date maps and location data.
+                        The app is built using React for the frontend and Java Spring for the backend, with a MySQL database to store and manage data. It also integrates with the Mapbox API to provide accurate and up-to-date maps and location data.
                         </span>
                 </div>
 
                 <div className="cardDiv2" data-aos="fade-up-left">
                     <span>
-                    The app is built using React for the frontend and Java Spring for the backend, with a PostgreSQL database to store and manage data. It also integrates with the Mapbox API to provide accurate and up-to-date maps and location data.
+                    The application incorporates a map feature that displays the positions of public transportation vehicles, enabling users to visualize their movement on the city map. Additionally, a convenient search function is available to find specific routes or stops, facilitating efficient trip planning.
                     </span>
                 </div>
             </div>
@@ -144,19 +144,19 @@ const Home = () => {
             <div className="aboutContent">
                 <div className="cardDiv1" data-aos="fade-up-right" data-aos-duration="4000">
                         <span>
-                        LvivTrans is a web application designed to help citizens and tourists navigate the public transportation system in Lviv, Ukraine. The app provides real-time GPS tracking of buses, trams, and trolleybuses, allowing users to track their location and estimated arrival times.
+                        To enhance the user experience, LvivTrans allows individuals to create personal accounts. By doing so, users can save their favorite routes and receive personalized updates regarding delays or service changes. This feature ensures that users stay informed and can adjust their travel plans accordingly.
                         </span>
                 </div>
 
                 <div className="cardDiv2" data-aos="fade-up-left">
                     <span>
-                    The app features a user-friendly interface with a map displaying the current location of public transportation vehicles, as well as a search function to find specific routes or stops. Users can create an account to save their favorite routes and receive personalized updates on delays or changes in service.
+                    LvivTrans takes advantage of the powerful cloud computing capabilities offered by Microsoft Azure. By leveraging Azure's services, the application achieves scalability, reliability, and enhanced performance.
                     </span>
                 </div>
 
                 <div className="cardDiv1" data-aos="fade-up-right">
                         <span className="h2">
-                        The app is built using React for the frontend and Java Spring for the backend, with a PostgreSQL database to store and manage data. It also integrates with the Mapbox API to provide accurate and up-to-date maps and location data.
+                        In conclusion, by leveraging the capabilities of Microsoft Azure, LvivTrans benefits from a scalable and reliable infrastructure, efficient data management, robust security measures, and global accessibility. Azure empowers LvivTrans to provide a seamless and secure experience for its users, ensuring the smooth operation of the application's public transportation navigation services.
                         </span>
                 </div>
 
