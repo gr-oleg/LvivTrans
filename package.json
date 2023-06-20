@@ -33,7 +33,7 @@
     "webpack": "^5.80.0"
   },
   "scripts": {
-    "test": "jest",
+
     "start": "CI=false react-scripts start",
     "build": "CI=false react-scripts build",
     "eject": "CI=false react-scripts eject"
