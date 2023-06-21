@@ -18,6 +18,7 @@
 # Project Diagrams
 
 ![1](https://github.com/gr-oleg/LvivTrans/assets/67430598/afc6cc6f-e0cb-42aa-9c4d-7669f8ca7717)
+![2](https://github.com/gr-oleg/LvivTrans/assets/67430598/5eac179d-d7b5-4c7f-b861-f5e7e45956ba)
 
 
 # Requirements
