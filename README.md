@@ -1,87 +1,23 @@
-# About Project
+# How To Launch
+## 1. Clone the repository
 
-LvivTrans is a web application designed to help citizens and tourists navigate the public transportation system in Lviv, Ukraine. The app provides real-time GPS tracking of buses, trams, and trolleybuses, allowing users to track their location and estimated arrival times. If a suitable public transportation option is not available, users can also book a taxi through the app.
+### `-git clone https://github.com/gr-oleg/LvivTrans.git`
 
-The app features a user-friendly interface with a map displaying the current location of public transportation vehicles, as well as a search function to find specific routes or stops. Users can create an account to save their favorite routes and receive personalized updates on delays or changes in service.
+## 2. Install dependencies
 
-The app is built using React for the frontend and Java Spring for the backend, with a PostgreSQL database to store and manage data. It also integrates with the Mapbox API to provide accurate and up-to-date maps and location data.
+### `npm install`
 
-Overall, LvivTrans aims to improve the public transportation experience in Lviv by providing users with real-time information and convenient booking options.
-
-# Getting Started
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-First, install the packages:
-
-### `npm i react-router-dom`
-
-In the project directory, you can run:
+## 3. Run the app
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 4. Test
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Project Diagrams
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![1](https://github.com/gr-oleg/LvivTrans/assets/67430598/afc6cc6f-e0cb-42aa-9c4d-7669f8ca7717)
 
 Lab4
 1. Zhovanuk Oleksandr
