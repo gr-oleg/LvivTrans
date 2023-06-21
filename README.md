@@ -58,10 +58,4 @@
 ✅12. Postman колекції для тестування 5ти сценаріїв
 
 ✅13. Unit тести алгоритму обробки даних
-
-
-
-Lab4
-1. Zhovanuk Oleksandr
-2. <a href="https://github.com/fdsssawe/inkfinder" target="_blank">My project</a>
-3. <a href="https://github.com/fdsssawe/LvivTrans/pull/1" target="_blank">Pull request</a>
+#####
