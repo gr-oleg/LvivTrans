@@ -23,16 +23,25 @@
 # Requirements
 
 Технічні:
+
 ✅1. Swagger UI
+
 ✅2. Авторизація з допомогою Google аккаунту (або Azure AD)
+
 ✅3. Використання Entity Framework (або іншої ORM)
+
 ✅4. Інтеграція з MS SQL або NoSQL базою даних
+
 ✅5. Dependency Injection
+
 ✅6. Використання в проекті відкритого API (наприклад одного з https://github.com/public-apis/public-apis)
+
 ◻️7. Має бути якийсь алгоритм обробки даних (конвертація, маппінг, розрахунок) або використання якогось інструменту з Azure (наприклад Face API)
+
 ✅8. Використання Azure Monitor (Application Insights або CloudWatch) для зберігання та аналізу логів додатку
 
 Розгортання та зберігання коду:
+
 ✅8. Розгортування проекту в Azure/AWS
 ✅9. Весь код повинун бути збережений на Github в публічному репозиторії (з постійними оновленнями)
 ✅10. Налаштувати Continuous Integration/Continuous delivery
