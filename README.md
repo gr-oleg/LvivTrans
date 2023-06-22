@@ -18,6 +18,9 @@
 # Project Diagrams
 
 ![1](https://github.com/gr-oleg/LvivTrans/assets/67430598/afc6cc6f-e0cb-42aa-9c4d-7669f8ca7717)
+
+
+# Technologies
 ![2](https://github.com/gr-oleg/LvivTrans/assets/67430598/5eac179d-d7b5-4c7f-b861-f5e7e45956ba)
 
 
@@ -34,7 +37,7 @@
 
 ✅4. Інтеграція з MS SQL або NoSQL базою даних
 
-✅5. Dependency Injection
+◻️5. Dependency Injection
 
 ✅6. Використання в проекті відкритого API (наприклад одного з https://github.com/public-apis/public-apis)
 
